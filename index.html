@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Futuristic 3D Room</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<!-- 
+            This importmap is crucial. It tells the browser that whenever the script asks for "three", 
+            it should load it from the first URL, and whenever it asks for "three/addons/", 
+            it should look for them in the second URL. This is what makes the import for 
+            CapsuleGeometry work correctly.
+        -->
+		<script type="importmap">
+			{
+				"imports": {
+					"three": "https://unpkg.com/three@0.163.0/build/three.module.js",
+					"three/addons/": "https://unpkg.com/three@0.163.0/examples/jsm/"
+				}
+			}
+		</script>
+
+		<!-- The 'defer' attribute ensures this script runs only after the HTML page has fully loaded -->
+		<script type="module" src="script.js" defer></script>
+	</body>
+</html>
